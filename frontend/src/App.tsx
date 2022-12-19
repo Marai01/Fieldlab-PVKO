@@ -4,6 +4,10 @@ import { useEffect } from "react";
 import React from "react";
 import { addMinutes, setHours, setSeconds } from "date-fns";
 
+async function testFetch() {
+    console.log(await fetch("http://localhost:8080").then(res => res.json()));
+}
+
 function App() {
     const data = {
         zaal: "zaal 1",
@@ -195,7 +199,7 @@ function App() {
             "SideBarTimes",
             createSideBarTimes({ h: 7, m: 11 }, { h: 17, m: 22 })
         );
-
+        testFetch();
     }
 
     function createSideBarTimes(start: HoursMinutes, end: HoursMinutes) {
