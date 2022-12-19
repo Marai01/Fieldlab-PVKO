@@ -3,16 +3,18 @@ CREATE DATABASE `festival`;
 
 USE `festival`;
 
-CREATE TABLE `fest` (
+CREATE TABLE `blokkenschema` (
 	id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    spreker VARCHAR(100) NOT NULL,
-    begintijd VARCHAR(100) NOT NULL,
-    eindtijd VARCHAR(100) NOT NULL,
-    zaal VARCHAR(100) NOT NULL,
-    capaciteit VARCHAR(100) NOT NULL
+    Workshop_naam VARCHAR(100) NOT NULL,
+    Spreker VARCHAR(100) NOT NULL,
+    Ruimte VARCHAR(100) NOT NULL,
+    Start_tijd VARCHAR(100) NOT NULL,
+    Eind_tijd VARCHAR(100) NOT NULL
 );
 
-INSERT INTO `fest` (`spreker`, `begintijd`, `eindtijd`, `zaal`, `capaciteit`) VALUES
-	('naam', '9.30', '12.00', '1', '500'),
-	('naam', '8.30', '11.00', '2', '200'),
-    ('naam', '10.30', '13.00', '3', '450')
+INSERT INTO `blokkenschema` (`Worshop_naam`, `Spreker`,`Ruimte`, `Start_tijd`, `Eind_tijd`) VALUES
+	('Themasessie ecosysteem slot 1', 'Fabian', '1', '14:45', '15:20'),
+	('Themasessie kg organisatie', 'Fabian', '2', '14:45', '15:20'),
+    ('Themasessie data', 'Fabian', '1', '15:20', '15:55'),
+    ('Themasessie tech touch', 'Fabian', '2', '15:20', '15:55'),
+    ('Workshop rt', 'Fabian', '4', '16:55', '17:30')
