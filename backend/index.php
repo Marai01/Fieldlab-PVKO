@@ -27,19 +27,39 @@ $password = '';
 $charset = 'utf8mb4';
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $pdo = new PDO($dsn, $user, $password);
-$stmt = $pdo->query('SELECT * FROM fest');
+$stmt = $pdo->query('SELECT * FROM blokkenschema');
 while ($row = $stmt->fetch()) {
     $manage = null;
-    $naam = 'fest ' . $row['id'];
-    $manage[$naam][] = array(
-    'spreker' => $row['spreker'],
-    'begin tijd' => $row['begintijd'],
-    'eind tijd' => $row['eindtijd'],
-    'zaal' => $row['zaal'],
-    'capaciteit' => $row['capaciteit']
+    $starttijd = null;
+    $eindtijd = null;
+    $starttijden = explode(":", $row['Start_tijd']);
+    $eindtijden = explode(":", $row['Eind_tijd']);
+    $startu = $starttijden[0];
+    $startm = $starttijden[1];
+    $eindu = $eindtijden[0];
+    $eindm = $eindtijden[1];
+    $naam = 'room' . $row['id'];
+    $starttijd['start'] = array(
+        'u' => $startu,
+        'm' => $startm
     );
-    // $manage = json_encode($manage, true);
-    $json[] = $manage;
+    $eindtijd['eind'] = array(
+        'u' => $eindu,
+        'm' => $eindm
+    );
+    $tijden['time'] = array(
+        $starttijden,
+        $eindtijden
+    );
+    $manage[$naam][] = array(
+    'title' => $row['Workshop_naam'],
+    'spreaker' => $row['Spreker'],
+    'time' => $starttijd + $eindtijd,
+    'room' => $row['Ruimte'],
+    'capacity' => $row['Capaciteit']
+    );
+    $manage = json_encode($manage, true);
+    print $manage . '<br>';
 }
-print json_encode($json, true);
+
 ?>
