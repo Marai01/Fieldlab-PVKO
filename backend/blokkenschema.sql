@@ -47,7 +47,7 @@ INSERT INTO `blokkenschema` (`id`, `Workshop_naam`, `Spreker`, `Ruimte`, `Start_
 (27, 'Workshop: De Gouden Regels voor Klantvriendelijkheid in de toekomst', 'Bas Peters en Gerrit Piksen', '7', '14:45', '15:20', NULL),
 (28, 'Workshop: Creatief met CX', 'Babs Asselbergs', '5', '14:45', '15:20', NULL),
 (29, 'Themasessie: Van beleving naar betekenis (case Betaald Voetbal)', 'Themasessie: Van beleving naar betekenis (case Betaald Voetbal)', '3', '14:45', '15:20', NULL),
-(30, 'Themasessie: De data gedreven toekomst (Case UWV: Verantwoorde toezicht algoritmes)', 'Robin Philippo (UWV) en Riens Koopman (Cmotions) en Serge Poppes (Pegamento)', '3', '15:20', '15:55', NULL),
+(30, 'Workshop: Eco-systeem mapping', 'Robin Philippo (UWV) en Riens Koopman (Cmotions) en Serge Poppes (Pegamento)', '3', '15:20', '15:55', NULL),
 (31, 'Verdieping: Doorpraten over de klantgerichte organisatie van de toekomst met AkzoNobel', 'AkzoNobel onder leiding van Daan Noordeloos (Due North Consultancy) en Stephan van Slooten (Altuïtion)', '4', '15:20', '15:55', NULL),
 (32, 'Themasessie: De data gedreven toekomst (case Florius)', 'Deliane Schimmel (Florius) en Kees Groenewoud (Cmotions)', '5', '16:20', '16:55', NULL),
 (33, 'Themasessie: Van beleving naar betekenis (case participatiesamenleving) ', 'Rob Beltman (H3ROES) en Jasper Klapwijk (Kantelingen)', '6', '16:20', '16:55', NULL);
