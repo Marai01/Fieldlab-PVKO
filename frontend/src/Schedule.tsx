@@ -23,22 +23,25 @@ export const Schedule: FC = () => {
   const sidebarRef = useRef<RefObject<HTMLDivElement>>();
   const [slide, setSlide] = useState<number>(0);
   function handleNext() {
-    setSlide((state) => state + 1);
-    if (slide > dummyRooms.length - 1) {
-      setSlide(0);
+    let slideId = slide + 1;
+
+    if (slideId > dummyRooms.length - 1) {
+      slideId = 0;
     }
     document
-      .getElementById(`slide-${slide}`)
+      .getElementById(`slide-${slideId}`)
       ?.scrollIntoView({ behavior: "smooth" });
+    setSlide(slideId);
   }
   function handleLast() {
-    setSlide((state) => state - 1);
+    let slideId = slide - 1;
     if (slide < 0) {
-      setSlide(dummyEvents.length - 1);
+      slideId = dummyEvents.length - 1;
     }
     document
-      .getElementById(`slide-${slide}`)
+      .getElementById(`slide-${slideId}`)
       ?.scrollIntoView({ behavior: "smooth" });
+    setSlide(slideId);
   }
   const dayRange: Time = {
     start: {
