@@ -9,11 +9,11 @@ export const dummyEvents: Event[] = [
     speaker: "me",
     time: {
       start: {
-        h: 10,
+        h: 13,
         m: 12,
       },
       end: {
-        h: 10,
+        h: 13,
         m: 30,
       },
     },
@@ -24,35 +24,38 @@ export const dummyEvents: Event[] = [
     speaker: "me again",
     time: {
       start: {
-        h: 11,
+        h: 15,
         m: 0,
       },
       end: {
-        h: 11,
+        h: 15,
         m: 30,
       },
     },
   },
   {
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    title:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     description: "something 3",
     speaker: "me ones more",
     time: {
       start: {
-        h: 12,
+        h: 16,
         m: 22,
       },
       end: {
-        h: 13,
+        h: 17,
         m: 0,
       },
     },
   },
 ];
 
-export const dummyRooms: Rooms = new Array(3).fill(dummyEvents).map((events, index)=> {
-  return {
-    events: events,
-    title: `heeererer ${index}`
-  }
-})
+export const dummyRooms: Rooms = new Array(3)
+  .fill(dummyEvents)
+  .map((events, index) => {
+    return {
+      events: events,
+      title: `heeererer ${index}`,
+    };
+  });
