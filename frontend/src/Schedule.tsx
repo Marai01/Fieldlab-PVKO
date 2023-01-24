@@ -12,7 +12,18 @@ import React, {
 } from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { dummyEvents, dummyRooms } from "./data";
-import { Block, Event, HourMinute, Rooms, Time, TimeBlock } from "./type";
+import {
+  Block,
+  Event,
+  HourMinute,
+  Rooms,
+  Time,
+  TimeBlock,
+  Room as RoomType,
+  EventJSON,
+  RoomJSON,
+  RoomsJSON,
+} from "./type";
 import Room from "./Room";
 import SidBar from "./SideBar";
 import { ThemeProvider } from "./ThemeProvider";
@@ -24,8 +35,11 @@ export const Schedule: FC = () => {
   const [slide, setSlide] = useState<number>(0);
   function handleNext() {
     let slideId = slide + 1;
+    if (!data) {
+      return;
+    }
 
-    if (slideId > dummyRooms.length - 1) {
+    if (slideId > data.length - 1) {
       slideId = 0;
     }
     document
@@ -35,8 +49,11 @@ export const Schedule: FC = () => {
   }
   function handleLast() {
     let slideId = slide - 1;
+    if (!data) {
+      return;
+    }
     if (slide < 0) {
-      slideId = dummyEvents.length - 1;
+      slideId = data.length - 1;
     }
     document
       .getElementById(`slide-${slideId}`)
@@ -60,7 +77,7 @@ export const Schedule: FC = () => {
 
   function handleOverlayBlockClick(event: Event) {}
 
-  const { data, loading } = useFetch("data.php");
+  const { data, loading } = useFetch("http://localhost:80/data.php");
 
   const { sizeMultiplier, setSizeMultiplier } = useMetaDataContext();
 
@@ -138,30 +155,35 @@ function useFetch(url: string) {
   const [loading, setLoading] = useState(true);
 
   async function fetchData() {
-    // const response = await fetch(url);
-    // const json = await response.json();
-    // let parsedJson: Rooms = []
-    // for (let key in json) {
-    //   parsedJson.push(json[key]);
-    // }
-    // const data: Rooms = parsedJson.map((room: { events: any[]; })=>{ return {...room,events:room.events.map((event: { time: any; })=>{
-    //   const time = event.time;
-    //   return {
-    //     ...event,
-    //     time: {
-    //       start: {
-    //         h: parseInt(time.start.h),
-    //         m: parseInt(time.start.m),
-    //       },
-    //       end: {
-    //         h: parseInt(time.end.h),
-    //         m: parseInt(time.end.m),
-    //       }
-    //     }
-    //   }
-    // })}});
+    const response = await fetch(url);
+    const json = await response.json();
+    let parsedJson: RoomsJSON = [];
+    for (let key in json) {
+      parsedJson.push(json[key]);
+    }
+    const data: Rooms = parsedJson.map((room: RoomJSON) => {
+      return {
+        ...room,
+        events: room.events.map((event: EventJSON) => {
+          const time = event.time;
+          return {
+            ...event,
+            time: {
+              start: {
+                h: parseInt(time.start.h),
+                m: parseInt(time.start.m),
+              },
+              end: {
+                h: parseInt(time.end.h),
+                m: parseInt(time.end.m),
+              },
+            },
+          };
+        }),
+      };
+    });
 
-    const data = dummyRooms;
+    // const data = dummyRooms;
 
     console.log(data);
     setData(data);

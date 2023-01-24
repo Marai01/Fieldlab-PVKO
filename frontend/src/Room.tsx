@@ -77,7 +77,7 @@ function Room({
           }}
         >
           <div className="pl-3 h-full flex flex-col justify-around">
-            <div>
+            <div className="truncate">
               <em className="mr-2 rounded-full bg-neutral-50 text-black p-1">
                 {block.data.session}
               </em>

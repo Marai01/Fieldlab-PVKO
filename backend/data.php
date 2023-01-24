@@ -22,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 $json = null;
 $host = 'localhost';
 $db = 'deb77629n3_pvko';
-$user = 'deb77629n3_pvko';
-$password = 'deb77629n3_fabianispvko';
+$user = 'root';
+$password = '';
 $charset = 'utf8mb4';
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $pdo = new PDO($dsn, $user, $password);
@@ -37,11 +37,13 @@ while ($row = $stmt->fetch()) {
     $eindtijd = null;
     $starttijden = explode(":", $row['Start_tijd']);
     $eindtijden = explode(":", $row['Eind_tijd']);
+    $session = $row['session'];
+    $zaal = $row['zaal'];
     $startu = $starttijden[0];
     $startm = $starttijden[1];
     $eindu = $eindtijden[0];
     $eindm = $eindtijden[1];
-    $naam = 'Opties' . $row['Ruimte'];
+    $naam = 'Zaal ' . $row['zaal'];
     $tijden = [
         'start' => [
             'h' => $startu,
@@ -59,14 +61,16 @@ while ($row = $stmt->fetch()) {
         // 'room' => $row['Ruimte'],
         // 'capacity' => $row['Capaciteit'],
         // 'description' => "foliostkra",
-        'description' => $row['url_programma']
+        'description' => $row['url_programma'],
+        'zaal' => $zaal,
+        'session' => $session
     ];
     if ($firstLoop == true) {
         # code...
     }
-    $data[$row['Ruimte']]['events'] = $data[$row['Ruimte']]['events'] ?? [];
-    $data[$row['Ruimte']] = [
-        'events' => [...$data[$row['Ruimte']]['events'], $event],
+    $data[$row['zaal']]['events'] = $data[$row['zaal']]['events'] ?? [];
+    $data[$row['zaal']] = [
+        'events' => [...$data[$row['zaal']]['events'], $event],
         "title" => $naam
     ];
     // $manage = null;

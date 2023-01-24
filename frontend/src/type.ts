@@ -16,12 +16,37 @@ export interface Event {
   session: number;
 }
 
+export interface EventJSON {
+  title: string;
+  speaker: string;
+  description: string;
+  time: TimeJSON;
+  session: number;
+}
+
+export interface HourMinuteJSON {
+  h: string;
+  m: string;
+}
+
+export interface TimeJSON {
+  start: HourMinuteJSON;
+  end: HourMinuteJSON;
+}
+
+export interface RoomJSON {
+  events: EventJSON[];
+  title: string;
+}
+
 export interface Room {
   events: Event[];
   title: string;
 }
 
 export type Rooms = Room[];
+
+export type RoomsJSON = RoomJSON[];
 
 export interface Block<T> {
   data: T;
