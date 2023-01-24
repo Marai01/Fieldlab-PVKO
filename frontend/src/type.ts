@@ -13,14 +13,15 @@ export interface Event {
   speaker: string;
   description: string;
   time: Time;
+  session: number;
 }
 
 export interface Room {
-  events: Event[],
-  title: string
+  events: Event[];
+  title: string;
 }
 
-export type Rooms = Room[]
+export type Rooms = Room[];
 
 export interface Block<T> {
   data: T;

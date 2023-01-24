@@ -17,6 +17,7 @@ export const dummyEvents: Event[] = [
         m: 30,
       },
     },
+    session: 1.1,
   },
   {
     title: "2",
@@ -32,6 +33,7 @@ export const dummyEvents: Event[] = [
         m: 30,
       },
     },
+    session: 1.2,
   },
   {
     title:
@@ -48,6 +50,7 @@ export const dummyEvents: Event[] = [
         m: 0,
       },
     },
+    session: 1.3,
   },
 ];
 

@@ -84,14 +84,14 @@ export const Schedule: FC = () => {
             data={eventModalData}
           />
         )}
-        <img src="header.jpg" alt="header" />
+        <img className="sticky top-0 z-30" src="header.jpg" alt="header" />
         <div className="snap-x text-[#fff6e0] flex overflow-x-scroll overflow-y-hidden snap-mandatory ">
           <div className="sticky z-20 left-0 w-1/5 bg-[#6abca5] shrink-0">
             <h1>Tijden</h1>
             <SidBar range={dayRange} />
           </div>
           <div
-            className="fixed top-1/2 right-0 z-50"
+            className="fixed top-1/2 right-0 z-40"
             onClick={() => {
               handleNext();
             }}
@@ -99,7 +99,7 @@ export const Schedule: FC = () => {
             <AiOutlineArrowRight className="text-6xl" />
           </div>
           <div
-            className="fixed left-1/4 top-1/2 z-50"
+            className="fixed left-1/4 top-1/2 z-40"
             onClick={() => {
               handleLast();
             }}
