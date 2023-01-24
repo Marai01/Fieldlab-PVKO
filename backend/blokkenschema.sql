@@ -14,23 +14,24 @@ CREATE TABLE `blokkenschema` (
   `Start_tijd` time NOT NULL,
   `Eind_tijd` time NOT NULL,
   `url_programma` text DEFAULT NULL,
-  `session` varchar(100) NULL,
-  `ruimte` varchar(100) NOT NULL
+  `session` varchar(100) NOT NULL,
+  `Ruimte` varchar(100) NOT NULL,
+  `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `blokkenschema`
 --
 
-INSERT INTO `blokkenschema` (`id`, `Workshop_naam`, `Spreker`, `zaal`, `Start_tijd`, `Eind_tijd`, `url_programma`, `session`, `ruimte`, `description`) VALUES
-(1, 'Welkom in een winterse sfeer', 'PVKO', '21', '13:00:00', '13:45:00', '', '1'),
-(20, 'Welkom in een winterse sfeer', 'PVKO', '1', '13:00:00', '13:45:00', '', '2'),
-(2, 'Welkom in een winterse sfeer', 'PVKO', '23', '13:00:00', '13:45:00', '', '3'),
-(3, 'Welkom in een winterse sfeer', 'PVKO', '1A', '13:00:00', '13:45:00', '', '4'),
-(4, 'Welkom in een winterse sfeer', 'PVKO', '11', '13:00:00', '13:45:00', '', '5'),
-(5, 'Welkom in een winterse sfeer', 'PVKO', '20', '13:00:00', '13:45:00', '', '6'),
-(6, 'Welkom in een winterse sfeer', 'PVKO', '8', '13:00:00', '13:45:00', '', '7'),
-(7, 'Kick-Off plenair', 'Arjan van Hijum', '14', '14:00:00', '14:45:00', '', '1'),
+INSERT INTO `blokkenschema` (`id`, `Workshop_naam`, `Spreker`, `zaal`, `Start_tijd`, `Eind_tijd`, `url_programma`, `session`, `Ruimte`, `description`) VALUES
+(1, 'Welkom in een winterse sfeer', 'PVKO', '21', '13:00:00', '13:45:00', '', '', '1', ''),
+(20, 'Welkom in een winterse sfeer', 'PVKO', '1', '13:00:00', '13:45:00', '', '', '2', ''),
+(2, 'Welkom in een winterse sfeer', 'PVKO', '23', '13:00:00', '13:45:00', '', '', '3', ''),
+(3, 'Welkom in een winterse sfeer', 'PVKO', '1A', '13:00:00', '13:45:00', '', '', '4', ''),
+(4, 'Welkom in een winterse sfeer', 'PVKO', '11', '13:00:00', '13:45:00', '', '', '5', ''),
+(5, 'Welkom in een winterse sfeer', 'PVKO', '20', '13:00:00', '13:45:00', '', '', '6', ''),
+(6, 'Welkom in een winterse sfeer', 'PVKO', '8', '13:00:00', '13:45:00', '', '', '7', ''),
+(7, 'Kick-Off plenair', 'Arjan van Hijum', '14', '14:00:00', '14:45:00', '', '', '1', ''),
 (8, 'Van klantrelaties naar ecosysteem (case KVK) ', 'Fabian', '21', '14:45:00', '15:20:00', 'https://www.pvko.nl/bijeenkomsten/over/325/pvko-winterfestival-2023/schedule#activity-4', '1.1', '1', "Hoe kun je je echt van betekenis zijn voor klanten door in een klantreis verder te kijken dan je eigen organisatie? Samenwerking met andere organisaties vanuit de levensgebeurtenissen van de klant van betekenis te zijn en blijven vraagt om een klantgericht ecosysteem. Wat vraagt zo'n samenwerking van organisaties? Waar lopen ze tegen aan? En hoe pakt men dit aan binnen de overheid zodat burgers en ondernemers ook een overheid ervaren?
 
 In deze sessie gaan we in over hoe je dit kan aanpakken, wat de uitdagingen zijn en bespreken we een concrete case van de Kamer van Koophandel over de overheidsbrede aanpak van levensgebeurtenissen.
@@ -45,13 +46,13 @@ Het UWV zet data in voor haar toezichtstaak die zich richt op vroegtijdig signal
 Door: Robin Philippo (UWV) en Riens Koopman (Cmotions) en Serge Poppes (Pegamento)
 
 #datagedreven #algoritme #data ethiek #verantwoord #AVG #risicomodel #modellevenscyclus #governance"),
-(10, 'Pauze', 'Fabian', '21', '15:55:00', '16:20:00', '', '1'),
-(11, 'Pauze', NULL, '23', '15:55:00', '16:20:00', '', '2'),
-(12, 'Pauze', NULL, '1A', '15:55:00', '16:20:00', '', '3'),
-(13, 'Pauze', NULL, '11', '15:55:00', '16:20:00', '', '4'),
-(14, 'Pauze', NULL, '20', '15:55:00', '16:20:00', '', '5'),
-(21, 'Pauze', NULL, '1', '15:55:00', '16:20:00', '', '6'),
-(15, 'Pauze', NULL, '8', '15:55:00', '16:20:00', '', '7'),
+(10, 'Pauze', 'Fabian', '21', '15:55:00', '16:20:00', '', '', '1', ''),
+(11, 'Pauze', NULL, '23', '15:55:00', '16:20:00', '', '', '2', ''),
+(12, 'Pauze', NULL, '1A', '15:55:00', '16:20:00', '', '', '3', ''),
+(13, 'Pauze', NULL, '11', '15:55:00', '16:20:00', '', '', '4', ''),
+(14, 'Pauze', NULL, '20', '15:55:00', '16:20:00', '', '', '5', ''),
+(21, 'Pauze', NULL, '1', '15:55:00', '16:20:00', '', '', '6', ''),
+(15, 'Pauze', NULL, '8', '15:55:00', '16:20:00', '', '', '7', ''),
 (16, 'Data gedreven toekomst (Case Florius)', 'Fabian', '21', '16:20:00', '16:55:00', 'https://www.pvko.nl/bijeenkomsten/over/325/pvko-winterfestival-2023/schedule#activity-7', '3.1', '1', "Data gedreven waardecreatie gaat in de toekomst niet alleen om de waarde die het oplevert voor de eigen organisatie maar met name voor de klant en de maatschappij! Hoe je data op een verantwoorde manier laat werken in de toekomst en hoe je daarin voortdurend op zoek moet naar de juiste balans tussen mens (CX en EX), organisatie en techniek leer je van Florius.
 
 We kunnen niet meer om data heen. We hebben ontzettend veel informatie tot onze beschikking maar de vraag is wat we ermee doen en hoe we er ethisch mee om gaan. Wat heeft het voor impact op onze klanten en medewerkers? Medewerkers zijn echter wel onze belangrijkste asset dus is het van belang om hen zodanig te ondersteunen met technologie en klantdata, dat zij duurzaam inzetbaar kunnen zijn en blijven. Daarmee creëer je ambassadeurs voor je organisatie die de klant op een mensgerichte manier helpen.
@@ -68,14 +69,14 @@ Laat je onderdompelen in een mix van praktische voorbeelden, tools en kennis in 
 Door: Gerard Datema (excap)
 
 #Ecosysteem #EustomerExperience #Digita"),
-(18, 'Eindpresentatie Algemeen', 'Fabian', '14', '17:30:00', '18:00:00', '', '1'),
-(19, 'Napraten met hap, drank en lach in het speelkwartier', 'Borrel', '21', '18:00:00', '20:00:00', '', '1'),
-(34, 'Napraten met hap, drank en lach in het speelkwartier', 'Borrel', '23', '18:00:00', '20:00:00', '', '2'),
-(35, 'Napraten met hap, drank en lach in het speelkwartier', 'Borrel', '1A', '18:00:00', '20:00:00', '', '3'),
-(36, 'Napraten met hap, drank en lach in het speelkwartier', 'Borrel', '11', '18:00:00', '20:00:00', '', '4'),
-(37, 'Napraten met hap, drank en lach in het speelkwartier', 'Borrel', '1', '18:00:00', '20:00:00', '', '5'),
-(38, 'Napraten met hap, drank en lach in het speelkwartier', 'Borrel', '20', '18:00:00', '20:00:00', '', '6'),
-(39, 'Napraten met hap, drank en lach in het speelkwartier', 'Borrel', '8', '18:00:00', '20:00:00', '', '7'),
+(18, 'Eindpresentatie Algemeen', 'Fabian', '14', '17:30:00', '18:00:00', '', '1', '1', ''),
+(19, 'Napraten met hap, drank en lach in het speelkwartier', 'Borrel', '21', '18:00:00', '20:00:00', '', '', '1', ''),
+(34, 'Napraten met hap, drank en lach in het speelkwartier', 'Borrel', '23', '18:00:00', '20:00:00', '', '', '2', ''),
+(35, 'Napraten met hap, drank en lach in het speelkwartier', 'Borrel', '1A', '18:00:00', '20:00:00', '', '', '3', ''),
+(36, 'Napraten met hap, drank en lach in het speelkwartier', 'Borrel', '11', '18:00:00', '20:00:00', '', '', '4', ''),
+(37, 'Napraten met hap, drank en lach in het speelkwartier', 'Borrel', '1', '18:00:00', '20:00:00', '', '', '5', ''),
+(38, 'Napraten met hap, drank en lach in het speelkwartier', 'Borrel', '20', '18:00:00', '20:00:00', '', '', '6', ''),
+(39, 'Napraten met hap, drank en lach in het speelkwartier', 'Borrel', '8', '18:00:00', '20:00:00', '', '', '7', ''),
 (22, 'De toekomst van KG Org. in 280 tekens', NULL, '1', '14:45:00', '15:20:00', 'https://www.pvko.nl/bijeenkomsten/over/325/pvko-winterfestival-2023/schedule#activity-4', '1.2', '2', "Ga in gesprek met vier experts over de toekomst van klantgericht organiseren. Op basis van vier visies op de toekomst van klantgerichte organisaties gaan we op zoek naar de belangrijkste drijvende en remmende krachten voor klantgericht ondernemen de komende 20 jaar. Ontdek welke uitdagingen de toekomst van jouw klantgerichte organisatie te wachten staan in vier tweets.
 
 Door: Daan Noordeloos (Due North Consultancy), Evert Vols (Buro Improof), Stephan van Slooten (Altuïtion) en Kees Kerkvliet (TOTE-M)
@@ -90,7 +91,7 @@ Peter Jongeneel, Business Development Manager bij Content Guru, gaat in deze Tec
 Door: Vodafone Business en Peter Jongeneel (Content Guru)
 
 #Techtouch #Balans #CustomerExperience"),
-(24, 'Pauze', NULL, '2', '16:20:00', '16:55:00', 'https://www.pvko.nl/bijeenkomsten/over/325/pvko-winterfestival-2023/schedule#activity-7', '2'),
+(24, 'Pauze', NULL, '2', '16:20:00', '16:55:00', 'https://www.pvko.nl/bijeenkomsten/over/325/pvko-winterfestival-2023/schedule#activity-7', '2', '2', ''),
 (25, 'Tech-Touch Balans van de toekomst (deel 2)', NULL, '14', '16:20:00', '16:55:00', 'https://www.pvko.nl/bijeenkomsten/over/325/pvko-winterfestival-2023/schedule#activity-7', '3.2', '2', "Wat is de stip op de horizon? Hoe vinden we de balans tussen menselijke technologie én het ondersteunen van mensen met technologie?
 
 #Techtouch #Balans #CustomerExperience"),
@@ -126,7 +127,7 @@ Trends, ontwikkelingen en voorbeelden laten zien waarom dit niet alleen nuttig, 
 Door: Rob Beltman (H3ROES) en Niels Redert (Impct Agency)
 
 #Betekenis #SocialImpact #MaatschapplijkOndernemen #Betekenis"),
-(30, 'Workshop: Eco-systeem mapping', 'Robin Philippo (UWV) en Riens Koopman (Cmotions) en Serge Poppes (Pegamento)', '8', '15:20', '15:55', NULL, '2.6', '6', "Map jouw (klant zijn/haar) ecosysteem! Tijdens deze workshop krijg je een korte introductie in het ecosysteem denken en innoveren. We gaan aan de slag met de toepassing van ecosysteem mapping en de waarde daarvan. Hoe kan je deze tool gebruiken om klantgericht te innoveren?
+(30, 'Workshop: Eco-systeem mapping', 'Robin Philippo (UWV) en Riens Koopman (Cmotions) en Serge Poppes (Pegamento)', '8', '15:20', '15:55', NULL, '2.6', '5', "Map jouw (klant zijn/haar) ecosysteem! Tijdens deze workshop krijg je een korte introductie in het ecosysteem denken en innoveren. We gaan aan de slag met de toepassing van ecosysteem mapping en de waarde daarvan. Hoe kan je deze tool gebruiken om klantgericht te innoveren?
 
 We brengen de verschillende stakeholders en onderdelen van het systeem in kaart en starten met het analyseren van de uitgewisselde waarden als startpunt voor klantgerichte innovatie. We eindigen de workshop met een template waarmee je zelf de vervolgstappen kan zetten.
 
@@ -148,7 +149,12 @@ Jasper Klapwijk laat zien wat er nodig is om maatschappelijk betekenisvolle vera
 
 Door: Rob Beltman (H3ROES) en Jasper Klapwijk (Kantelingen)
 
-#Betekenis #SocialImpact #MaatschapplijkOndernemen #Betekenis #Participatiesamenleving");
+#Betekenis #SocialImpact #MaatschapplijkOndernemen #Betekenis #Participatiesamenleving"),
+(43, 'Eindpresentatie Algemeen', 'Fabian', '14', '17:30:00', '18:00:00', '', '1', '2', ''),
+(44, 'Eindpresentatie Algemeen', 'Fabian', '14', '17:30:00', '18:00:00', '', '1', '3', ''),
+(45, 'Eindpresentatie Algemeen', 'Fabian', '14', '17:30:00', '18:00:00', '', '1', '4', ''),
+(46, 'Eindpresentatie Algemeen', 'Fabian', '14', '17:30:00', '18:00:00', '', '1', '5', ''),
+(47, 'Eindpresentatie Algemeen', 'Fabian', '14', '17:30:00', '18:00:00', '', '1', '6', '');
 
 ALTER TABLE `blokkenschema`
   ADD PRIMARY KEY (`id`);

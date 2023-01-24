@@ -43,7 +43,7 @@ while ($row = $stmt->fetch()) {
     $startm = $starttijden[1];
     $eindu = $eindtijden[0];
     $eindm = $eindtijden[1];
-    $naam = 'Zaal ' . $row['zaal'];
+    $naam = 'Zaal ' . $row['Ruimte'];
     $tijden = [
         'start' => [
             'h' => $startu,
@@ -61,16 +61,16 @@ while ($row = $stmt->fetch()) {
         // 'room' => $row['Ruimte'],
         // 'capacity' => $row['Capaciteit'],
         // 'description' => "foliostkra",
-        'description' => $row['url_programma'],
+        'description' => $row['description'],
         'zaal' => $zaal,
         'session' => $session
     ];
     if ($firstLoop == true) {
         # code...
     }
-    $data[$row['zaal']]['events'] = $data[$row['zaal']]['events'] ?? [];
-    $data[$row['zaal']] = [
-        'events' => [...$data[$row['zaal']]['events'], $event],
+    $data[$row['Ruimte']]['events'] = $data[$row['Ruimte']]['events'] ?? [];
+    $data[$row['Ruimte']] = [
+        'events' => [...$data[$row['Ruimte']]['events'], $event],
         "title" => $naam
     ];
     // $manage = null;

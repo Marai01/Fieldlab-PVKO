@@ -78,12 +78,19 @@ function Room({
         >
           <div className="pl-3 h-full flex flex-col justify-around">
             <div className="truncate">
-              <em className="mr-2 rounded-full bg-neutral-50 text-black p-1">
+              <em className="mr-2 rounded-full font-bold bg-neutral-50 text-black p-1">
                 {block.data.session}
               </em>
               <b className="w-full truncate">{block.data.title}</b>
             </div>
-            <span className="truncate">{printTime(block.data.time)}</span>
+            <div className="font-bold">
+              <span className="rounded-full px-3 p-1 bg-white m-1 text-[#e65924]">
+                {printTime(block.data.time)}
+              </span>
+              <span className="rounded-full p-1 px-3 bg-white m-1 text-[#e65924]">
+                zaal: {block.data.zaal}
+              </span>
+            </div>
           </div>
         </div>
       ))}

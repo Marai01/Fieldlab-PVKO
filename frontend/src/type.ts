@@ -14,6 +14,7 @@ export interface Event {
   description: string;
   time: Time;
   session: number;
+  zaal: string;
 }
 
 export interface EventJSON {
@@ -22,6 +23,7 @@ export interface EventJSON {
   description: string;
   time: TimeJSON;
   session: number;
+  zaal: string;
 }
 
 export interface HourMinuteJSON {
