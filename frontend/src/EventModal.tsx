@@ -6,9 +6,14 @@ import { printTime } from "./helper";
 function EventModal({ data, onClose }: { data: Event; onClose: () => void }) {
   return (
     <>
-      <h1>I am the modal</h1>
       <div className="fixed z-50 top-0 left-0 h-screen w-screen backdrop-blur-sm bg-transparent flex place-content-center">
-        <div className="bg-white rounded-lg p-20 h-fit w-fit">
+        <div className="bg-white container rounded-lg overflow-y-scroll p-20">
+          {/* <button
+            className="border-1 p-2 border-black border-solid bg-slate-50 pr-4 pl-4"
+            onClick={onClose}
+          >
+            Close
+          </button> */}
           <h1>{data.title}</h1>
           <p>{data.description}</p>
           <br />

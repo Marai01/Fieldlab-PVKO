@@ -21,9 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 
 $json = null;
 $host = 'localhost';
-$db = 'deb77629n3_pvko';
-$user = 'root';
-$password = '';
+$db = 'deb143144_pvko';
+$user = 'deb143144_pvko';
+$password = 'deb143144_fabianispvko';
 $charset = 'utf8mb4';
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $pdo = new PDO($dsn, $user, $password);
@@ -43,7 +43,7 @@ while ($row = $stmt->fetch()) {
     $startm = $starttijden[1];
     $eindu = $eindtijden[0];
     $eindm = $eindtijden[1];
-    $naam = 'Zaal ' . $row['Ruimte'];
+    $naam = 'Sessiethemas ' . $row['Ruimte'];
     $tijden = [
         'start' => [
             'h' => $startu,

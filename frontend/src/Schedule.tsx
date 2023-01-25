@@ -11,7 +11,7 @@ import React, {
   useState,
 } from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import { dummyEvents, dummyRooms } from "./data";
+// import { dummyEvents, dummyRooms } from "./data";
 import {
   Block,
   Event,
@@ -77,7 +77,7 @@ export const Schedule: FC = () => {
 
   function handleOverlayBlockClick(event: Event) {}
 
-  const { data, loading } = useFetch("http://localhost:80/data.php");
+  const { data, loading } = useFetch("/data.php");
 
   const { sizeMultiplier, setSizeMultiplier } = useMetaDataContext();
 
@@ -115,14 +115,14 @@ export const Schedule: FC = () => {
           >
             <AiOutlineArrowRight className="text-6xl" />
           </div>
-          <div
+          {/* <div
             className="fixed left-1/4 top-1/2 z-40"
             onClick={() => {
               handleLast();
             }}
           >
             <AiOutlineArrowLeft className="text-6xl" />
-          </div>
+          </div> */}
           {data.map((room, index) => (
             <div
               id={`slide-${index}`}
