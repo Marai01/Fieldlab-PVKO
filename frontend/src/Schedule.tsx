@@ -44,7 +44,7 @@ export const Schedule: FC = () => {
     }
     document
       .getElementById(`slide-${slideId}`)
-      ?.scrollIntoView({ behavior: "smooth" });
+      ?.scrollIntoView({ behavior: "smooth", block: "nearest" });
     setSlide(slideId);
   }
   function handleLast() {
@@ -101,7 +101,12 @@ export const Schedule: FC = () => {
             data={eventModalData}
           />
         )}
-        <img className="sticky top-0 z-30" src="header.jpg" alt="header" />
+        <img
+          className="sticky top-0 max-h-80 z-30 md:hidden"
+          src="header.jpg"
+          alt="header"
+        />
+        <div className="bg-[url('/header.jpg')] hidden h-80 bg-slate-600 md:block bg-cover"></div>
         <div className="snap-x text-[#fff6e0] flex overflow-x-scroll overflow-y-hidden snap-mandatory ">
           <div className="sticky z-20 left-0 w-1/5 bg-[#6abca5] shrink-0">
             <h1>Tijden</h1>

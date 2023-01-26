@@ -16,6 +16,7 @@ function SidBar({ range }: { range: Time }) {
     <div>
       {sidebarBlocks.map((timeBlock, index) => (
         <div
+          key={index}
           style={{ height: timeBlock.size * sizeMultiplier }}
           className={
             "w-full border-2 border-solid border-[#fff6e0] text-[#fff6e0]" +

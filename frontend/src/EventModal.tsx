@@ -14,14 +14,20 @@ function EventModal({ data, onClose }: { data: Event; onClose: () => void }) {
           >
             Close
           </button> */}
-          <h1>{data.title}</h1>
-          <p>{data.description}</p>
+          <h1 className="text-xl mb-2">{data.title}</h1>
+          <p>
+            {data.description.length > 0 ? (
+              data.description
+            ) : (
+              <em>Geen bescrijving van toepassing</em>
+            )}
+          </p>
           <br />
           <em>{data.speaker}</em>
           <br />
           <em>{printTime(data.time)}</em> <br />
           <button
-            className="border-1 p-2 border-black border-solid bg-slate-50 pr-4 pl-4"
+            className="border-1 p-2 border-black border-solid bg-[#084c3c] text-white pr-4 pl-4"
             onClick={onClose}
           >
             Close

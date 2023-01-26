@@ -56,6 +56,7 @@ function Room({
       <div className="w-full absolute" style={{ position: "absolute" }}>
         {backdropBlocks.map((block, index) => (
           <div
+            key={index}
             style={{ height: block.size * sizeMultiplier }}
             className={
               "w-full border-2 border-[#fff6e0]" +
@@ -65,8 +66,9 @@ function Room({
           ></div>
         ))}
       </div>
-      {overlayBlocks.map((block) => (
+      {overlayBlocks.map((block, index) => (
         <div
+          key={index}
           onClick={() => onOverlayBlockClick(block.data)}
           className={`truncate absolute z-10 w-full bg-[#e65924] rounded-lg border-2  border-solid text-[#fff6e0] border-[#c64414]`}
           style={{
