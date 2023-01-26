@@ -7,7 +7,7 @@ function EventModal({ data, onClose }: { data: Event; onClose: () => void }) {
   return (
     <>
       <div className="fixed z-50 top-0 left-0 h-screen w-screen backdrop-blur-sm bg-transparent flex place-content-center">
-        <div className="bg-white container rounded-lg overflow-y-scroll p-20">
+        <div className="bg-white container rounded-lg overflow-y-scroll p-5 sm:p-10 md:p-14 lg:p-32">
           {/* <button
             className="border-1 p-2 border-black border-solid bg-slate-50 pr-4 pl-4"
             onClick={onClose}
